@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace LinQ_ćwiczenie
 
@@ -30,9 +31,58 @@ namespace LinQ_ćwiczenie
             //string s = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
             //SPOJ_CD();
 
+            SPOJ_biegacz();
 
+            //var chars = new[] { "a", "b", "c", "d" };
+            //var csv = chars.Aggregate(new StringBuilder(), (a, b) => {
+            //    if (a.Length > 0)
+            //        a.Append(",");
+            //    a.Append(b);
+            //    return a;
+            //});
+            //Console.WriteLine(csv);
 
+        }
 
+        static void SPOJ_biegacz()
+        {
+            string s = "00:45,01:32,02:18,03:01,03:44,04:31,05:19,06:01,06:47,07:35";
+            string test = Console.ReadLine();
+            var q = s.Split(',').Select(o => o.Split(':')).Select(o => int.Parse(o[0]) * 60 + int.Parse(o[1]));
+            int[] q1 = new int[] { q.ElementAt(0), 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            for (int i = 0; i < q.Count() - 1; i++)
+            {
+                q1[i + 1] = q.ElementAt(i + 1) - q.ElementAt(i);
+            }
+            double av = (double)q.ElementAt(q.Count() - 1) / (double)q.Count();
+
+            //dodać do test4 i test3, aby dodawało indeksy gdy wartość się powtórzy
+
+            switch (test)
+            {
+                case "test1":
+                    Console.WriteLine(q.Count());
+                    break;
+                case "test2":
+                    Console.WriteLine(String.Join(" ", s.Split(',')));
+                    break;
+                case "test3":
+                    Console.WriteLine("0" + q1.Select((o, i) => (Czas: o, ID: ++i))
+                        .Min().Czas / 60 +":"+ q1.Select((o, i) => (Czas: o, ID: ++i))
+                        .Min().Czas%60 +" " + q1.Select((o, i) => (Czas: o, ID: ++i))
+                        .Min().ID);
+                    break;
+                case "test4":
+                    Console.WriteLine("0" + q1.Select((o, i) => (Czas: o, ID: ++i))
+                        .Max().Czas / 60 + ":" + q1.Select((o, i) => (Czas: o, ID: ++i))
+                        .Max().Czas % 60 + " " + q1.Select((o, i) => (Czas: o, ID: ++i))
+                        .Max().ID);
+                    break;
+                case "test5":
+                    Console.WriteLine(Math.Round(av /60) + ":" + Math.Ceiling(av % 60));
+                    break;
+
+            }
         }
 
         static void SPOJ_CD()

@@ -18,7 +18,7 @@ namespace LinQ_ćwiczenie
         static void Main(string[] args)
         {
             //https://e.wsei.edu.pl/pluginfile.php/65811/mod_resource/content/2/lab-linq-string-sortowanie-wg-nazwisk-pozniej-imion.html
-            Console.WriteLine("hemloł");
+
             //krok1_1();
             //krok1_2();
             //krok1_3();
@@ -27,64 +27,46 @@ namespace LinQ_ćwiczenie
             //krok2_3();
             //zadanie_1_1();
 
-            string s = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
-            //string s = Console.ReadLine();
-            var query = s.Split(',')
-                .Select(o => o.Split(':'))
-                .Select(x => (minuta: Int32.Parse(x[0]), sekunda: Int32.Parse(x[1])));
+            //string s = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
+            //SPOJ_CD();
 
-            double minuty = query.Sum(o => o.minuta);
-            double sekundy = query.Sum(o => o.sekunda);
-            double srednia = Math.Ceiling((minuty * 60 + sekundy) / query.Count());
-            double godziny = 0;
-            if (sekundy >= 60)
+
+
+
+        }
+
+        static void SPOJ_CD()
+        {
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
             {
-                minuty += sekundy / 60;
-                sekundy = sekundy % 60;
+                string s = Console.ReadLine();
+                var query = s.Split(',')
+                    .Select(o => o.Split(':'))
+                    .Select(x => (minuta: Int32.Parse(x[0]), sekunda: Int32.Parse(x[1])));
+
+                double minuty = query.Sum(o => o.minuta);
+                double sekundy = query.Sum(o => o.sekunda);
+                double srednia = Math.Ceiling((minuty * 60 + sekundy) / query.Count());
+                double godziny = 0;
+                if (sekundy >= 60)
+                {
+                    minuty += sekundy / 60;
+                    sekundy = sekundy % 60;
+                }
+                if (minuty >= 60)
+                {
+                    godziny = minuty / 60;
+                    minuty = minuty % 60;
+                }
+                var l2 = $"{query.Count()},{(int)srednia / 60}:{(int)srednia % 60},{(int)godziny}:{(int)minuty}:{(int)sekundy}"
+                    .Split(',')
+                    .Select(x => x.Split(':'))
+                    .Select(x => x.SkipWhile(v => int.Parse(v) == 0))
+                    .Select(o => String.Join(":", o));
+                string wynik = String.Join(" ", l2);
+                Console.WriteLine(wynik);
             }
-            if (minuty >= 60)
-            {
-                godziny = minuty / 60;
-                minuty = minuty % 60;
-            }
-            var l2 = $"{query.Count()},{(int)srednia / 60}:{(int)srednia % 60},{(int)godziny}:{(int)minuty}:{(int)sekundy}"
-                .Split(',')
-                .Select(x => x.Split(':'))
-                .Select(x => x.SkipWhile(v => int.Parse(v) == 0))
-                .Select(o => String.Join(":", o));
-
-
-            //List<string> l = new List<string>();
-            //l.Add($"{query.Count()}");
-            //l.Add($"{(int)srednia/60}:{(int)srednia%60}");
-            //l.Add($"{(int)godziny}:{(int)minuty}:{(int)sekundy}");
-
-
-            
-                //.Select(o => (lUtworow: o[0], srednia: o[1], dlugosc: o[2]))
-                //.Select(x => x.lUtworow + " " + x.srednia + " " + x.dlugosc);
-            
-            
-
-            
-                
-            //.Select(x => (minuta: Int32.Parse(x[0]), sekunda: Int32.Parse(x[1])))
-            //.Select((x) => x.minuta + " " + x.minuta);
-            
-
-            
-
-            string wynik = String.Join(" ", l2);
-
-            
-
-
-
-            Console.WriteLine(wynik);
-
-
-
-
         }
         static void zadanie_1_1()// notacja flow
         {

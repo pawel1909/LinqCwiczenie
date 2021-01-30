@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pafeu\\source\\repos\\LinQ ćwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj": {}
+    "C:\\Users\\Pafeu\\Source\\Repos\\LinqCwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pafeu\\source\\repos\\LinQ ćwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj": {
+    "C:\\Users\\Pafeu\\Source\\Repos\\LinqCwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pafeu\\source\\repos\\LinQ ćwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj",
+        "projectUniqueName": "C:\\Users\\Pafeu\\Source\\Repos\\LinqCwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj",
         "projectName": "LinQ ćwiczenie",
-        "projectPath": "C:\\Users\\Pafeu\\source\\repos\\LinQ ćwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj",
+        "projectPath": "C:\\Users\\Pafeu\\Source\\Repos\\LinqCwiczenie\\LinQ ćwiczenie\\LinQ ćwiczenie.csproj",
         "packagesPath": "C:\\Users\\Pafeu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pafeu\\source\\repos\\LinQ ćwiczenie\\LinQ ćwiczenie\\obj\\",
+        "outputPath": "C:\\Users\\Pafeu\\Source\\Repos\\LinqCwiczenie\\LinQ ćwiczenie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pafeu\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -18,7 +18,7 @@ namespace LinQ_ćwiczenie
         static void Main(string[] args)
         {
             //https://e.wsei.edu.pl/pluginfile.php/65811/mod_resource/content/2/lab-linq-string-sortowanie-wg-nazwisk-pozniej-imion.html
-
+            Console.WriteLine("hemloł");
             //krok1_1();
             //krok1_2();
             //krok1_3();
